@@ -41,8 +41,8 @@ GO
 
 --Select by assignment
 SELECT 
-	t.Name as 'Tag Name',
-	a.Title as 'Article Title'
-	FROM Tag t
-	LEFT JOIN Tags_Articles ta on t.TagID = ta.TagID
-	LEFT JOIN Article a on ta.ArticleID = a.ArticleID
+    	a.Title as 'Article Title',
+	t.Name as 'Tag Name'
+	FROM Article a
+	LEFT JOIN Tags_Articles ta on a.ArticleID = ta.ArticleID
+	LEFT JOIN Tag t on ta.TagID = t.TagID
